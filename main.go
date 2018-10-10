@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	"os"
 	"time"
 )
 
@@ -24,7 +25,8 @@ func main() {
 	http.HandleFunc("/", router)
 
 	//Start web server
-	if err := http.ListenAndServe(":8080", nil); err != nil {
+	port := ":" + os.Getenv("PORT")
+	if err := http.ListenAndServe(port, nil); err != nil {
 		panic(err)
 	}
 }
