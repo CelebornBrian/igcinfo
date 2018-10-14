@@ -11,17 +11,17 @@ import (
 //nolint: gocyclo
 func router(w http.ResponseWriter, r *http.Request) {
 	//Build regex expressions for the url and handle possible errors
-	apiHandler, err := regexp.Compile("^/igcinfo/api/$")
+	apiHandler, err := regexp.Compile("^/igcinfo/api/?$")
 	if err != nil {
 		errStatus(w, http.StatusInternalServerError, err, "Failed to compile api regex")
 		return
 	}
-	apiIgcHandler, err := regexp.Compile("^/igcinfo/api/igc/$")
+	apiIgcHandler, err := regexp.Compile("^/igcinfo/api/igc/?$")
 	if err != nil {
 		errStatus(w, http.StatusInternalServerError, err, "Failed to compile api/igc regex")
 		return
 	}
-	apiIgcNumberHandler, err := regexp.Compile("^/igcinfo/api/igc/[0-9]+$")
+	apiIgcNumberHandler, err := regexp.Compile("^/igcinfo/api/igc/[0-9]+/?$")
 	if err != nil {
 		errStatus(w, http.StatusInternalServerError, err, "Failed to compile api/igc/<id> regex")
 		return
