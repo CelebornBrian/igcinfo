@@ -9,6 +9,10 @@ For the development of the IGC processing, you will use an open source IGC libra
 The system must be deployed on either Heroku or Google App Engine, and the Go source code must be available for inspection by the teaching staff (read-only access is sufficient).
 
 ## Specification
+Student: Per-Kristian K. Buer
+Student nr: 480237
+Link to heroku deployment: [https://pkbuer-igcinfo.herokuapp.com/](https://pkbuer-igcinfo.herokuapp.com/ "Heroku 
+Deployment")
 
 ### General rules
 
